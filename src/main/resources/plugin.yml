@@ -1,10 +1,8 @@
-name: ${name}
-description: ${description}
-author: ${author}
-main: ${mainClass}
-version: ${version}
-url: ${url}
+name: Command Sync Client
+description: This works with Command Sync Server to run commands on the Velocity instance from the backend server.
+author: windcolor-dev
+main: ga.windpvp.commandsync.SyncPlugin
+version: 0.0.1
 commands:
-  example:
-    aliases: ["ex"]
-    description: "This is an example plugin."
+  sync:
+    description: "Syncs a command to the Velocity instance."

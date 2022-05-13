@@ -1,6 +1,2 @@
-messages:
-  from-command: "&eHello world from Command."
-  from-listener: "&aHello world from Listener."
-  from-task: "&dHello world from Task."
-
-task-repeat-every: 3
+sync-server-port: 500
+name: "backend-server"

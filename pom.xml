@@ -2,19 +2,19 @@
     <modelVersion>4.0.0</modelVersion>
     
     <!-- Project information -->
-    <groupId>ga.windpvp</groupId>
-    <artifactId>ExamplePlugin</artifactId>
+    <groupId>ga.windpvp.commandsync</groupId>
+    <artifactId>commandsyncclient</artifactId>
     <packaging>jar</packaging>
 
     <!-- Plugin Information -->
-    <name>ExamplePlugin</name>
-    <description>This is just an example plugin</description>
+    <name>Command Sync Client</name>
+    <description>This works with Command Sync Server to run commands on the Velocity instance from the backend server.</description>
     <version>0.0.1</version>
-    <url>https://github.com/Wind-Development/Bukkit-Boilerplate</url>
+    <url>https://github.com/Wind-Development/CommandSync</url>
 
     <properties>
         <author>windcolor-dev</author>
-        <mainClass>ga.windpvp.example.ExamplePlugin</mainClass>
+        <mainClass>ga.windpvp.commandsync.SyncPlugin</mainClass>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
