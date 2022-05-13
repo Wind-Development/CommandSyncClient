@@ -13,15 +13,23 @@ public class ConnectionManager {
 
 		try {
 			connection.startConnection("127.0.0.1", port);
-			connection.sendMessage("name " + name);
+			sendMessage("name " + name);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
 	public void dispatchCommand(String command) {
+		sendMessage("run command " + command);
+	}
+	
+	public void shutdown() {
+		sendMessage(".");
+	}
+	
+	private void sendMessage(String message) {
 		try {
-			connection.sendMessage("run command " + command);
+			connection.sendMessage(message);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

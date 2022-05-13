@@ -26,6 +26,11 @@ public class SyncPlugin extends JavaPlugin {
 		manager = new ConnectionManager(INSTANCE, getConfig().getInt("sync-server-port"),
 				getConfig().getString("name"));
 	}
+	
+	@Override
+	public void onDisable() {
+		manager.shutdown();
+	}
 
 	public static SyncPlugin getInstance() {
 		return SyncPlugin.INSTANCE;
