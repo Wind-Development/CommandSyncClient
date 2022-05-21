@@ -1,2 +1,5 @@
+# This option is currently not implemented yet!
 sync-server-port: 1500
+
+# The name of this backend server
 name: "backend-server"
