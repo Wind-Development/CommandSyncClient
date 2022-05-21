@@ -5,6 +5,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 import ga.windpvp.commandsync.SyncPlugin;
+import net.md_5.bungee.api.ChatColor;
 
 public class SyncCommand implements CommandExecutor {
 
@@ -21,6 +22,8 @@ public class SyncCommand implements CommandExecutor {
 		}
 
 		SyncPlugin.getInstance().getConnectionManager().dispatchCommand(finalCommand);
+		
+		sender.sendMessage(ChatColor.GREEN + "Synced command " + finalCommand + " to the Velocity instance!");
 
 		return true;
 	}
