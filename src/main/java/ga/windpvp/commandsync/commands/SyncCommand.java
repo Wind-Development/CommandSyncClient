@@ -12,18 +12,16 @@ public class SyncCommand implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-		String finalCommand = "";
-
-		StringBuilder builder = new StringBuilder(finalCommand);
+		StringBuilder builder = new StringBuilder();
 
 		for (String arg : args) {
 			builder.append(arg);
 			builder.append(" ");
 		}
 
-		SyncPlugin.getInstance().getConnectionManager().dispatchCommand(finalCommand);
+		SyncPlugin.getInstance().getConnectionManager().dispatchCommand(builder.toString());
 		
-		sender.sendMessage(ChatColor.GREEN + "Synced command " + finalCommand + " to the Velocity instance!");
+		sender.sendMessage(ChatColor.GREEN + "Synced command " + builder.toString() + " to the Velocity instance!");
 
 		return true;
 	}
