@@ -12,6 +12,10 @@ public class SyncCommand implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
+		if (!sender.hasPermission("commandsync.admin")) {
+			return true;
+		}
+		
 		StringBuilder builder = new StringBuilder();
 
 		for (int index = 0; index < args.length; index++) {

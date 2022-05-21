@@ -3,6 +3,9 @@ description: This works with Command Sync Server to run commands on the Velocity
 author: windcolor-dev
 main: ga.windpvp.commandsync.SyncPlugin
 version: 0.0.1
+
+permissions:
+  commandsync.admin:
 commands:
   sync:
     description: "Syncs a command to the Velocity instance."
