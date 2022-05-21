@@ -14,9 +14,12 @@ public class SyncCommand implements CommandExecutor {
 
 		StringBuilder builder = new StringBuilder();
 
-		for (String arg : args) {
-			builder.append(arg);
-			builder.append(" ");
+		for (int index = 0; index < args.length; index++) {
+			builder.append(args[index]);
+			
+			if (index < args.length - 1) {
+				builder.append(" ");
+			}
 		}
 
 		SyncPlugin.getInstance().getConnectionManager().dispatchCommand(builder.toString());
