@@ -1,2 +1,2 @@
-sync-server-port: 500
+sync-server-port: 1500
 name: "backend-server"
