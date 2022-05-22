@@ -9,6 +9,7 @@ import ga.windpvp.commandsync.SyncPlugin;
 public class ConnectionManager {
 
 	private final Connection connection;
+	private volatile boolean isConnected = false;
 
 	public ConnectionManager(SyncPlugin instance, int port, String name) {
 		connection = new Connection();
@@ -26,15 +27,17 @@ public class ConnectionManager {
 					instance.getLogger().warning("Unable to connect to the Velocity instance");
 				}
 			}
-		}.runTaskTimer(instance, 0, 40);
+		}.runTaskTimerAsynchronously(instance, 0, 40);
 	}
 
 	public void dispatchCommand(String command) {
-		sendMessage("run command " + command);
+		if (isConnected)
+			sendMessage("run command " + command);
 	}
 	
 	public void shutdown() {
-		sendMessage(".");
+		if (isConnected)
+			sendMessage(".");
 	}
 	
 	private void sendMessage(String message) {
