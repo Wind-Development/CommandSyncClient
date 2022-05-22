@@ -5,27 +5,28 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.net.UnknownHostException;
 
 public class Connection {
 
-	private Socket clientSocket;
-	private PrintWriter out;
-	private BufferedReader in;
+	public Socket clientSocket;
+	public PrintWriter out;
+	public BufferedReader in;
+	
+	public Connection(String ip, int port) {
+		try {
+			clientSocket = new Socket(ip, port);
+			out = new PrintWriter(clientSocket.getOutputStream(), true);
+			in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
-	public void startConnection(String ip, int port) throws UnknownHostException, IOException {
-		clientSocket = new Socket(ip, port);
-		out = new PrintWriter(clientSocket.getOutputStream(), true);
-		in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+	public boolean isConnected() {
+		return clientSocket.isConnected();
 	}
 
 	public void sendMessage(String msg) throws IOException {
 		out.println(msg);
-	}
-
-	public void stopConnection() throws IOException {
-		in.close();
-		out.close();
-		clientSocket.close();
 	}
 }
