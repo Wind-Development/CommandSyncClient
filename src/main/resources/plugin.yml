@@ -6,6 +6,7 @@ version: 0.0.1
 
 permissions:
   commandsync.admin:
+    default: op
 commands:
   sync:
     description: "Syncs a command to the Velocity instance."
