@@ -13,6 +13,12 @@ public class SyncCommand implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
 		if (!sender.hasPermission("commandsync.admin")) {
+			sender.sendMessage(ChatColor.RED + "Insufficient permissions.");
+			return true;
+		}
+		
+		if (args.length == 0) {
+			sender.sendMessage(ChatColor.RED + "Insufficient arguments! Use /sync <command>.");
 			return true;
 		}
 		
