@@ -14,7 +14,7 @@ public class ConnectionManager {
 	private final Connection connection;
 	private volatile boolean isConnected = false;
 
-	public ConnectionManager(SyncPlugin instance, int port, String name) {
+	public ConnectionManager(SyncPlugin instance, int port, String name, String password) {
 		connection = new Connection("127.0.0.1", port);
 
 		// Continuously try to connect to the server
@@ -42,6 +42,7 @@ public class ConnectionManager {
 					}
 					
 					sendMessage("name " + name);
+					sendMessage("password " + password);
 					cancel();
 				} else {
 					unableToConnect();

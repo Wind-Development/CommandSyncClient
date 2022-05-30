@@ -23,8 +23,8 @@ public class SyncPlugin extends JavaPlugin {
 		this.getCommand("sync").setExecutor(new SyncCommand());
 
 		// Initialize connection
-		manager = new ConnectionManager(INSTANCE, getConfig().getInt("sync-server-port"),
-				getConfig().getString("name"));
+		manager = new ConnectionManager(INSTANCE, getConfig().getInt("port"),
+				getConfig().getString("name"), getConfig().getString("password"));
 	}
 	
 	@Override
