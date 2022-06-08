@@ -34,7 +34,7 @@ public class SyncCommand implements CommandExecutor {
 
 		SyncPlugin.getInstance().getConnectionManager().dispatchCommand(builder.toString());
 		
-		sender.sendMessage(ChatColor.GREEN + "Synced command " + builder.toString() + " to the Velocity instance!");
+		sender.sendMessage(ChatColor.GREEN + "Synced command /" + builder.toString() + " to the Velocity instance!");
 
 		return true;
 	}
